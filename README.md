@@ -67,26 +67,26 @@ bun dev
 - Получить все продукты:
   ```javascript
   fetch('https://fakestoreapi.com/products')
-    .then(res => res.json())
-    .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
 - Получить один продукт:
   ```javascript
   fetch('https://fakestoreapi.com/products/1')
-    .then(res => res.json())
-    .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
 - Ограничить результаты:
   ```javascript
   fetch('https://fakestoreapi.com/products?limit=5')
-    .then(res => res.json())
-    .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
 - Сортировка результатов:
   ```javascript
   fetch('https://fakestoreapi.com/products?sort=desc')
-    .then(res => res.json())
-    .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
 
 #### Корзины
@@ -94,20 +94,20 @@ bun dev
 - Получить все корзины:
   ```javascript
   fetch('https://fakestoreapi.com/carts')
-    .then(res => res.json())
-    .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
 - Получить одну корзину:
   ```javascript
   fetch('https://fakestoreapi.com/carts/5')
-    .then(res => res.json())
-    .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
 - Ограничить результаты:
   ```javascript
   fetch('https://fakestoreapi.com/carts?limit=5')
-    .then(res => res.json())
-    .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
 
 #### Пользователи
@@ -115,26 +115,26 @@ bun dev
 - Получить всех пользователей:
   ```javascript
   fetch('https://fakestoreapi.com/users')
-    .then(res => res.json())
-    .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
 - Получить одного пользователя:
   ```javascript
   fetch('https://fakestoreapi.com/users/1')
-    .then(res => res.json())
-    .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
 - Добавить нового пользователя:
   ```javascript
   fetch('https://fakestoreapi.com/users', {
-    method: "POST",
+    method: 'POST',
     body: JSON.stringify({
       email: 'John@gmail.com',
       username: 'johnd',
       password: 'm38rmF$',
       name: {
         firstname: 'John',
-        lastname: 'Doe'
+        lastname: 'Doe',
       },
       address: {
         city: 'kilcoole',
@@ -143,12 +143,12 @@ bun dev
         zipcode: '12926-3874',
         geolocation: {
           lat: '-37.3159',
-          long: '81.1496'
-        }
+          long: '81.1496',
+        },
       },
-      phone: '1-570-236-7033'
-    })
+      phone: '1-570-236-7033',
+    }),
   })
-  .then(res => res.json())
-  .then(json => console.log(json));
+    .then((res) => res.json())
+    .then((json) => console.log(json));
   ```
