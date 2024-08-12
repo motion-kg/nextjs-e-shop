@@ -14,23 +14,141 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Описание проекта
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Этот проект представляет собой React-приложение для интернет-магазина. Дизайн и макеты приложения готовы и доступны в Figma. Разработчики могут использовать этот репозиторий для начала работы над проектом.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Начало работы
 
-## Learn More
+### Требования
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js >= 18.x
+- npm или Yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Установка
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Склонируйте репозиторий:
+   ```bash
+   git@github.com:motion-kg/e-shop.git
+   ```
+2. Перейдите в директорию проекта:
+   ```bash
+   cd e-shop
+   ```
+3. Установите зависимости:
+   ```bash
+   npm install
+   ```
+   или
+   ```bash
+   yarn install
+   ```
 
-## Deploy on Vercel
+### Запуск проекта
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Запустите приложение в режиме разработки:
+   ```bash
+   npm start
+   ```
+   или
+   ```bash
+   yarn start
+   ```
+2. Откройте [http://localhost:3000](http://localhost:3000) в вашем браузере, чтобы увидеть результат.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Использование fakeStoreApi
+
+Для имитации данных интернет-магазина используется API **fakeStoreApi**, которое предоставляет данные в формате JSON. API может быть использовано для продуктов, корзин и пользователей.
+
+### Примеры использования API
+
+#### Продукты
+
+- Получить все продукты:
+  ```javascript
+  fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  ```
+- Получить один продукт:
+  ```javascript
+  fetch('https://fakestoreapi.com/products/1')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  ```
+- Ограничить результаты:
+  ```javascript
+  fetch('https://fakestoreapi.com/products?limit=5')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  ```
+- Сортировка результатов:
+  ```javascript
+  fetch('https://fakestoreapi.com/products?sort=desc')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  ```
+
+#### Корзины
+
+- Получить все корзины:
+  ```javascript
+  fetch('https://fakestoreapi.com/carts')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  ```
+- Получить одну корзину:
+  ```javascript
+  fetch('https://fakestoreapi.com/carts/5')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  ```
+- Ограничить результаты:
+  ```javascript
+  fetch('https://fakestoreapi.com/carts?limit=5')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  ```
+
+#### Пользователи
+
+- Получить всех пользователей:
+  ```javascript
+  fetch('https://fakestoreapi.com/users')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  ```
+- Получить одного пользователя:
+  ```javascript
+  fetch('https://fakestoreapi.com/users/1')
+    .then(res => res.json())
+    .then(json => console.log(json));
+  ```
+- Добавить нового пользователя:
+  ```javascript
+  fetch('https://fakestoreapi.com/users', {
+    method: "POST",
+    body: JSON.stringify({
+      email: 'John@gmail.com',
+      username: 'johnd',
+      password: 'm38rmF$',
+      name: {
+        firstname: 'John',
+        lastname: 'Doe'
+      },
+      address: {
+        city: 'kilcoole',
+        street: '7835 new road',
+        number: 3,
+        zipcode: '12926-3874',
+        geolocation: {
+          lat: '-37.3159',
+          long: '81.1496'
+        }
+      },
+      phone: '1-570-236-7033'
+    })
+  })
+  .then(res => res.json())
+  .then(json => console.log(json));
+  ```
