@@ -3,6 +3,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Link to FIGMA DEV
 https://www.figma.com/design/IjWWzCa4BEJNbD3ZHzbWpE/E-commerce-web_PRO-6?node-id=1-3&m=dev&t=m51wd0T2t1DB0u1Z-1
 
+## API Docs
+https://fakestoreapi.com/docs
+
+
 
 ## Getting Started
 
